@@ -18,9 +18,17 @@ $( function(){
 
 		context.font = '20px arial, sans-serif';
 		context.fillStyle = 'black';
-		context.setTransform( 1, 0.2, 0, 1, 0, 0 );
 
-		wrapText( context, 'No muslims shall enter the country', 500, 500, 200, 20 );
+		context.scale( 1, 2 );
+
+		context.setTransform( 1, -.05, -.12, 1, 0, 0.5 );
+
+		// context.fillRect( 710, 280, 240, 320 );
+
+
+
+
+		wrapText( context, 'No muslims shall enter the country without the express written consent of TRUMP.', 720, 300, 240, 20 );
 		// context.fillText( 'No muslims shall enter the country', 500, 500 );
 		context.setTransform( 1, 0, 0, 1, 0, 0 );
 		
@@ -51,3 +59,4 @@ $( function(){
 	}
 	
 });
+

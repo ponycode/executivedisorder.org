@@ -233,18 +233,16 @@ $( function(){
 	}
 
 	function postCanvasToFacebook2(){
-		var data = canvas.toDataURL("image/png");
-		var encodedPng = data.substring( data.indexOf(',') + 1, data.length );
-		var decodedPng = Base64Binary.decode( encodedPng );
 
 		var blob = null;
 		try {
+			var data = canvas.toDataURL("image/png");
 			blob = dataURItoBlob( data );
 		}catch( e ){
 			console.log( e );
 		}
 
-		console.log("POST TO FACEBOOK");
+		console.log("POSTING TO FACEBOOK");
 
 		FB.getLoginStatus( function( response ){
 			if( response.status === "connected" ){
@@ -312,7 +310,7 @@ $( function(){
 						FB.ui({
 							method: 'feed',
 							display: 'popup',
-							name: 'Look at the awesome e-card created just for you!',
+							name: message,
 							link: window.location.href,
 							picture: response.images[0].source,
 							privacy: 'SELF'
